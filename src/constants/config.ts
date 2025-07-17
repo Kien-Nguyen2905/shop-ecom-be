@@ -1,7 +1,7 @@
 import { config } from 'dotenv'
 
 const envName = process.env.NODE_ENV
-const isProduction = envName === 'production'
+export const isProduction = envName === 'production'
 
 config({
   path: isProduction ? '.env.production' : '.env'
