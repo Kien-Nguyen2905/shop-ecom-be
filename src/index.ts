@@ -19,7 +19,6 @@ import reviewRoute from '~/routes/reviews.routes'
 import informationRoute from '~/routes/information.routes'
 import { env, isProduction } from '~/constants/config'
 import helmet from 'helmet'
-import rateLimit from 'express-rate-limit'
 
 const app = express()
 
@@ -30,11 +29,11 @@ app.use(
   })
 )
 
-app.use(
-  cors({
-    origin: isProduction ? env.CLIENT_URL : '*'
-  })
-)
+// app.use(
+//   cors({
+//     origin: isProduction ? env.CLIENT_URL : '*'
+//   })
+// )
 
 databaseService.connect()
 app.use(express.json())
