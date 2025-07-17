@@ -17,7 +17,7 @@ import { initFolder } from '~/utils/file'
 import transactionRoute from '~/routes/transactions.routes'
 import reviewRoute from '~/routes/reviews.routes'
 import informationRoute from '~/routes/information.routes'
-import { env, isProduction } from '~/constants/config'
+import { env } from '~/constants/config'
 import helmet from 'helmet'
 
 const app = express()
@@ -31,7 +31,7 @@ app.use(
 
 app.use(
   cors({
-    origin: isProduction ? env.CLIENT_URL : '*'
+    origin: '*'
   })
 )
 
