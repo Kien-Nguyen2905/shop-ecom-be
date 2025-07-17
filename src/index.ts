@@ -29,11 +29,11 @@ app.use(
   })
 )
 
-// app.use(
-//   cors({
-//     origin: isProduction ? env.CLIENT_URL : '*'
-//   })
-// )
+app.use(
+  cors({
+    origin: isProduction ? env.CLIENT_URL : '*'
+  })
+)
 
 databaseService.connect()
 app.use(express.json())
