@@ -1,5 +1,4 @@
 import express from 'express'
-import cors, { CorsOptions } from 'cors'
 import { defaultErrorHandler } from '~/middlewares/error.middlewares'
 import addressRoute from '~/routes/address.routes'
 import brandRoute from '~/routes/brands.routes'
@@ -19,6 +18,7 @@ import reviewRoute from '~/routes/reviews.routes'
 import informationRoute from '~/routes/information.routes'
 import { env, isProduction } from '~/constants/config'
 import helmet from 'helmet'
+import cors, { CorsOptions } from 'cors'
 
 const app = express()
 
@@ -29,15 +29,13 @@ app.use(
   })
 )
 
-app.use(
-  cors({
-    origin: isProduction ? env.CORS_ORIGIN : '*'
-  })
-)
+const corsOptions: CorsOptions = {
+  origin: isProduction ? env.CLIENT_URL : '*'
+}
+app.use(cors(corsOptions))
 
 databaseService.connect()
 app.use(express.json())
-initFolder()
 
 app.use(`${env.API_VERSION}/users`, userRoute)
 app.use(`${env.API_VERSION}/address`, addressRoute)
