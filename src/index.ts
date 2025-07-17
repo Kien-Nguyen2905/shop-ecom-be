@@ -30,7 +30,7 @@ app.use(
 )
 
 const corsOptions: CorsOptions = {
-  origin: isProduction ? env.CORS_ORIGIN : '*',
+  origin: isProduction ? env.CLIENT_URL : '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Bao gồm OPTIONS cho preflight
   allowedHeaders: ['Content-Type', 'Authorization'], // Cho phép Authorization
   credentials: true // Nếu cần gửi cookie hoặc thông tin xác thực
