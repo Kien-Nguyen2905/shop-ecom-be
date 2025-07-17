@@ -3,7 +3,6 @@ import { Router } from 'express'
 
 import {
   cancelOrderController,
-  checkStockController,
   createOrderController,
   getOrderByUserController,
   getOrderController,
