@@ -50,5 +50,12 @@ export const env = {
   AWS_ACCESS_KEY_ID: process.env.AWS_ACCESS_KEY_ID as string,
   AWS_SECRET_ACCESS_KEY: process.env.AWS_SECRET_ACCESS_KEY as string,
   AWS_REGION: process.env.AWS_REGION as string,
-  SES_FROM_ADDRESS: process.env.SES_FROM_ADDRESS as string
+  SES_FROM_ADDRESS: process.env.SES_FROM_ADDRESS as string,
+  CLOUDINARY_URL_UPLOAD: process.env.CLOUDINARY_URL_UPLOAD as string,
+  CLOUDINARY_URL_DESTROY: process.env.CLOUDINARY_URL_DESTROY as string,
+  CLOUDINARY_API_BASE_URL: process.env.CLOUDINARY_API_BASE_URL as string,
+  UPLOAD_PRESET: process.env.UPLOAD_PRESET as string,
+  CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
+  CLOUDINARY_API_SECRET: process.env.CLOUDINARY_API_SECRET as string,
+  CLOUDINARY_CLOUD_NAME: process.env.CLOUDINARY_CLOUD_NAME as string
 }

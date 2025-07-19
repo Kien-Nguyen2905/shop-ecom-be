@@ -67,11 +67,12 @@ class OrderService {
     content?: string
   ) {
     const method_payment = type_payment === TYPE_PAYMENT.COD ? 'COD' : 'BANKING'
+    const status = type_payment === TYPE_PAYMENT.COD ? STATUS_TRANSACTION.SUCCESS : STATUS_TRANSACTION.PENDING
     const transactionData: any = {
       order_id: orderId,
       user_id: new ObjectId(user_id),
       method_payment,
-      status: STATUS_TRANSACTION.PENDING,
+      status,
       type_payment,
       value: total
     }

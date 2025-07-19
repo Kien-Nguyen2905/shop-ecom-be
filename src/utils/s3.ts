@@ -21,7 +21,7 @@ export const uploadFileToS3 = ({
   const parallelUploads3 = new Upload({
     client: s3,
     params: {
-      Bucket: 'shop-ecom',
+      Bucket: 'booking-marketplace',
       Key: filename,
       Body: fs.readFileSync(filepath),
       ContentType: contentType //Disautomatic dowload images

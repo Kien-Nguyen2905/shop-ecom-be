@@ -39,7 +39,7 @@ app.use(cors(corsOptions))
 
 databaseService.connect()
 app.use(express.json())
-
+initFolder()
 app.use(`${env.API_VERSION}/users`, userRoute)
 app.use(`${env.API_VERSION}/address`, addressRoute)
 app.use(`${env.API_VERSION}/category`, categoryRoute)
