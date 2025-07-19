@@ -20,8 +20,8 @@ export const sendVerification = async ({
   // Thiết lập transporter với thông tin SMTP
   const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, // true nếu sử dụng SSL, thường là với port 465
+    port: 465, //587
+    secure: true, //false // true nếu sử dụng SSL, thường là với port 465
     auth: {
       user: 'kiennguyen12.com@gmail.com',
       pass: `${env.PASSWORD_MAIL}`
