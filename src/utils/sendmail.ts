@@ -29,7 +29,7 @@ export const sendVerification = async ({
   })
 
   // URL xác minh
-  const verificationUrl = `${env.CORS_ORIGIN}/${type ? 'verify-email' : 'forgot-password'}?token=${token}`
+  const verificationUrl = `${env.CLIENT_URL}/${type ? 'verify-email' : 'forgot-password'}?token=${token}`
 
   // Cấu hình nội dung email
   const mailOptions = {
